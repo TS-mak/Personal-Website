@@ -122,8 +122,8 @@ const Portfolio: React.FC = () => {
             />
               <div>
               <p className="text-lg leading-relaxed">
-                Hi there! I&apos;m Thembisile Makhubu, a senior Computer Science student passionate about software development. 
-                I aspire to be a software engineer and love building innovative solutions. Let&apos;s connect!
+                Hi there! I am Thembisile Makhubu, a senior Computer Science student passionate about software development. 
+                I aspire to be a software engineer and love building innovative solutions. Let us connect!
               </p>
               <p className="mt-4 text-lg">
                 <strong>Contact Information:</strong><br />
