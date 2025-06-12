@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { Github, Linkedin, ExternalLink } from "lucide-react";
-import { FaJava, FaPython, FaReact, FaAws, FaDatabase, FaGitAlt, FaNode, FaShoppingCart, FaComments } from "react-icons/fa";
+import { FaJava, FaAws, FaDatabase, FaGitAlt, FaNode, FaShoppingCart, FaComments } from "react-icons/fa";
 import { BiNote } from "react-icons/bi";
-import { SiSocketdotio } from "react-icons/si";
+
 
 const Portfolio: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
