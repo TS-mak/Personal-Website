@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import React, { useState } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
@@ -112,11 +113,17 @@ const Portfolio: React.FC = () => {
         <section id="about" className="mb-12">
           <h2 className="text-3xl font-bold mb-6">About</h2>
           <div className="flex flex-col md:flex-row items-center space-x-6">
-            <img src="/headshot.jpeg" alt="Professional headshot" className="w-40 h-40 rounded-full shadow-lg" />
-            <div>
+          <Image 
+              src="/headshot.jpeg" 
+              alt="Professional headshot" 
+              width={160}
+              height={160}
+              className="rounded-full shadow-lg"
+            />
+              <div>
               <p className="text-lg leading-relaxed">
-                Hi there! I am Thembisile Makhubu, a senior Computer Science student passionate about software development. 
-                I aspire to be a software engineer and love building innovative solutions. Let's connect!
+                Hi there! I&apos;m Thembisile Makhubu, a senior Computer Science student passionate about software development. 
+                I aspire to be a software engineer and love building innovative solutions. Let&apos;s connect!
               </p>
               <p className="mt-4 text-lg">
                 <strong>Contact Information:</strong><br />
@@ -173,11 +180,13 @@ const Portfolio: React.FC = () => {
               >
                 {/* Project Image */}
                 <div className="mb-6 overflow-hidden rounded-lg">
-                  <img
-                    src={`/api/placeholder/400/200`}
-                    alt={`${project.title} preview`}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                  />
+                <Image
+                  src={`/api/placeholder/400/200`}
+                  alt={`${project.title} preview`}
+                  width={400}
+                  height={200}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                />
                 </div>
 
                 {/* Project Header */}
