@@ -267,7 +267,7 @@ const Portfolio: React.FC = () => {
               }}
             >
               <h3 className="text-lg font-semibold">Standard Bank Software Engineering Job Simulation</h3>
-              <p>Focused on improving Standard Bank's mobile app with Spring Boot, Python, and SQL.</p>
+              <p>Focused on improving the Standard Bank mobile app with Spring Boot, Python, and SQL.</p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
               date="May 2023"
@@ -278,7 +278,7 @@ const Portfolio: React.FC = () => {
               }}
             >
               <h3 className="text-lg font-semibold">Lyft Back-End Engineering Job Simulation</h3>
-              <p>Designed and implemented scalable APIs for Lyft's ride-sharing platform.</p>
+              <p>Designed and implemented scalable APIs for the Lyft ride-sharing platform.</p>
 
             </VerticalTimelineElement>
             <VerticalTimelineElement
