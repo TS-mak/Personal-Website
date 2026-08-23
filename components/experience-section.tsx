@@ -1,0 +1,281 @@
+import { Briefcase, GraduationCap, Users } from 'lucide-react'
+
+type ExperienceEntry = {
+  kind: 'work' | 'education' | 'leadership'
+  title: string
+  org: string
+  period: string
+  location: string
+  description: string
+  bullets: string[]
+  tags?: string[]
+}
+
+const entries: ExperienceEntry[] = [
+  {
+    kind: 'work',
+    title: 'Software Engineering Project Demi',
+    org: 'Department of Computer Science',
+    period: 'July 2026 - present',
+    location: 'Stellenbosch University, Stellenbosch',
+    description:
+      'Supporting the delivery of the Computer Science 344 Software Engineering module by assessing student software projects, evaluating tutorial submissions, and providing constructive feedback to help students strengthen their engineering practices.',
+    bullets: [
+      'Assess software engineering projects against academic and engineering standards.',
+      'Mark tutorials and provide detailed technical feedback',
+      'Help students improve their software design, implementation, and problem-solving skills.',
+      'Contribute to maintaining the quality of one of the department\'s core software engineering modules.',
+    ],
+    tags: ['Software Engineering', 'Code Review', 'Assessment', 'Mentorship', 'Communication'],
+  },
+  {
+    kind: 'work',
+    title: 'Software Engineering Tutorial Demi',
+    org: 'Department of Computer Science',
+    period: 'July 2025 – Nov 2025',
+    location: 'Stellenbosch University, Stellenbosch',
+    description:
+      'Assisted in teaching the Computer Science 344 Software Engineering module by supporting tutorials and helping students understand core software engineering concepts.',
+    bullets: [
+      'Guided students through software engineering tutorials.',
+      'Explained technical concepts and assisted with debugging.',
+      'Supported students in developing stronger programming and problem-solving skills.',
+      'Helped create an engaging and supportive learning environment.',
+    ],
+    tags: ['Teaching', 'Software Engineering', 'Communication', 'Mentorship'],
+  },
+  {
+    kind: 'work',
+    title: 'Software Engineering Virtual Experience',
+    org: 'Standard Bank (Forage)',
+    period: 'September 2024',
+    location: 'Remote',
+    description: 'Completed a virtual software engineering program focused on backend development, authentication, cloud technologies, and financial software.',
+    bullets: [
+      'Developed a Spring Boot application implementing JWT authentication and secure user access.',
+      'Built an AWS Lambda function in Python for facial recognition workflows.',
+      'Queried and analysed data using SQL and Teradata.',
+      'Developed a Django application that delivered personalised user experiences.',
+    ],
+    tags: ['Java', 'Spring Boot', 'Python', 'SQL', 'AWS Lambda', 'Django'],
+  },
+  {
+    kind: 'work',
+    title: 'Backend Engineering Virtual Experience',
+    org: 'Lyft (Forage)',
+    period: 'August 2023',
+    location: 'Remote',
+    description:
+      'Completed a backend engineering simulation exploring scalable backend development and software engineering best practices.',
+    bullets: [
+      'Applied Test-Driven Development and unit testing principles.',
+      'Refactored backend code for improved maintainability.',
+      'Designed RESTful APIs following clean architectural principles.',
+      'Used Git thoughout the software development workflow',
+    ],
+    tags: ['RESR APIs', 'Software Architecture', 'Git', 'Testing'],
+  },
+  {
+    kind: 'work',
+    title: 'Mathematics & Physics Tutor',
+    org: 'Falesizwe Secondary School',
+    period: '2023',
+    location: 'Frankfort, Free State',
+    description:
+      'Tutored high school learners in Mathematics and Physics while adapting teaching methods to suit different learning styles and levels of understanding.',
+    bullets: [
+      'Prepared students for examinations and assessments.',
+      'Developed personalised learning strategies.',
+      'Strengthened analytical thinking and problem-solving skills.',
+    ],
+    tags: ['Leadership', 'Community', 'Mentorship'],
+  },
+{
+    kind: 'education',
+    title: 'Bachelor of Science in Computer Science',
+    org: 'Stellenbosch University',
+    period: 'January 2022 – Present',
+    location: 'Stellenbosch, South Africa',
+    description:
+      'Final-year Computer Science student with a strong foundation in software engineering, operating systems, computer networks, concurrency, database systems, algorithms, and distributed systems.',
+    bullets: [
+      'Software Engineering',
+      'Operating System',
+      'Computer Networks',
+      'Database Systems',
+      'Concurrent Systems',
+      'Data Structures and Algorithms',
+      'Distributed Systems',
+    ],
+    tags: ['Leadership', 'Community', 'Mentorship'],
+  },
+  {
+    kind: 'leadership',
+    title: 'Co-founder & Interim Chairperson',
+    org: 'Stellenbosch Women in Information Technology (SWiiT)',
+    period: 'June 2026 – Present',
+    location: 'Stellenbosch, South Africa',
+    description:
+      'Co-founded and currently lead SWiiT, a student society dedicated to empowering women pursuing careers in technology through mentorship, collaboration, and professional development.',
+    bullets: [
+      'Co-founded the society alongside the founding executive team.',
+      'Lead strategic planning, governance, and society operations.',
+      'Coordinate partnerships with technology communities and industry.',
+      'Organise initiatives that encourage networking, mentorship, and technical growth.',
+      'Help create an inclusive environment where students can develop confidence in technology.',
+    ],
+    tags: ['Leadership', 'Community', 'Mentorship'],
+  },
+{
+    kind: 'leadership',
+    title: 'Class Representative',
+    org: 'Stellenbosch University',
+    period: 'February 2024 - June 2024',
+    location: 'On Campus',
+    description:
+      'Represented students by acting as the link between lecturers, faculty leadership, and classmates while advocating for student interests.',
+    bullets: [
+	    'Collected and communicated student feedback',
+	    'Participated in faculty leadership training',
+	    'Strengthened collaboration between students and academic staff',
+    ],
+    tags: ['Leadership', 'Communication', 'Teamwork'],
+  },
+
+]
+
+const kindMeta = {
+  work: {
+    Icon: Briefcase,
+    label: 'Work',
+    dotColor: 'bg-[oklch(0.52_0.22_262)]',
+    tagColor: 'bg-[oklch(0.52_0.22_262/0.08)] border-[oklch(0.52_0.22_262/0.25)] text-[oklch(0.4_0.18_262)]',
+  },
+  education: {
+    Icon: GraduationCap,
+    label: 'Education',
+    dotColor: 'bg-[oklch(0.62_0.18_145)]',
+    tagColor: 'bg-[oklch(0.62_0.18_145/0.08)] border-[oklch(0.62_0.18_145/0.25)] text-[oklch(0.45_0.16_145)]',
+  },
+  leadership: {
+    Icon: Users,
+    label: 'Leadership',
+    dotColor: 'bg-[oklch(0.72_0.18_55)]',
+    tagColor: 'bg-[oklch(0.72_0.18_55/0.08)] border-[oklch(0.72_0.18_55/0.25)] text-[oklch(0.5_0.16_55)]',
+  },
+}
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="inline-flex items-center gap-2 mb-4">
+      <span className="w-6 h-px bg-[oklch(0.52_0.22_262)]" aria-hidden="true" />
+      <span className="text-xs font-mono font-medium text-[oklch(0.52_0.22_262)] uppercase tracking-widest">
+        {children}
+      </span>
+    </div>
+  )
+}
+
+function TimelineEntry({ entry }: { entry: ExperienceEntry }) {
+  const meta = kindMeta[entry.kind]
+  const { Icon } = meta
+
+  return (
+    <div className="relative flex gap-6">
+      {/* Timeline dot + line */}
+      <div className="flex flex-col items-center">
+        <div
+          className={`w-9 h-9 rounded-full border-2 border-background shadow-sm flex items-center justify-center shrink-0 ${meta.dotColor}`}
+          aria-hidden="true"
+        >
+          <Icon className="w-4 h-4 text-white" />
+        </div>
+        <div className="flex-1 w-px bg-border mt-2" aria-hidden="true" />
+      </div>
+
+      {/* Content */}
+      <article className="pb-10 flex-1 min-w-0">
+          <div className="bg-card rounded-xl border border-border p-6 hover:shadow-sm transition-shadow">
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+            <div>
+              <h3 className="font-semibold text-foreground leading-tight">{entry.title}</h3>
+              <p className="text-sm font-medium text-[oklch(0.52_0.22_262)] mt-0.5">{entry.org}</p>
+            </div>
+            <div className="flex flex-col sm:items-end gap-0.5 shrink-0">
+              <span className="text-xs font-mono text-muted-foreground">{entry.period}</span>
+              <span className="text-xs text-muted-foreground">{entry.location}</span>
+            </div>
+          </div>
+
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4">{entry.description}</p>
+
+          <ul className="space-y-2 mb-4" aria-label="Highlights">
+            {entry.bullets.map((b) => (
+              <li key={b} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <span
+                  className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${meta.dotColor}`}
+                  aria-hidden="true"
+                />
+                {b}
+              </li>
+            ))}
+          </ul>
+
+          {entry.tags && entry.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5" role="list" aria-label="Tags">
+              {entry.tags.map((tag) => (
+                <span
+                  key={tag}
+                  role="listitem"
+                  className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-mono border ${meta.tagColor}`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </article>
+    </div>
+  )
+}
+
+export default function ExperienceSection() {
+  return (
+    <section id="experience" className="py-24 px-6 bg-secondary/40">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-14">
+          <div className="flex justify-center">
+            <SectionLabel>Experience</SectionLabel>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground text-balance">
+            Journey
+          </h2>
+          <p className="mt-3 text-muted-foreground max-w-xl mx-auto text-pretty leading-relaxed">
+            A journey built through software engineering, leadership, teaching, and continuous learning.
+          </p>
+        </div>
+
+        {/* Legend */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12" aria-label="Legend">
+          {(Object.entries(kindMeta) as [keyof typeof kindMeta, (typeof kindMeta)[keyof typeof kindMeta]][]).map(
+            ([, meta]) => (
+              <div key={meta.label} className="flex items-center gap-2 text-xs text-muted-foreground">
+                <span className={`w-2.5 h-2.5 rounded-full ${meta.dotColor}`} aria-hidden="true" />
+                {meta.label}
+              </div>
+            )
+          )}
+        </div>
+
+        {/* Timeline */}
+        <div>
+          {entries.map((entry) => (
+            <TimelineEntry key={`${entry.title}-${entry.org}`} entry={entry} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
