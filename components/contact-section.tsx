@@ -18,9 +18,9 @@ const socialLinks = [
   },
   {
     label: 'Twitter / X',
-    href: 'https://twitter.com/thembisilemakhubu',
+    href: 'https://x.com/thembisilemak?s=11',
     Icon: AtSign,
-    handle: '@thembisilemakhubu',
+    handle: '@thembisilemak',
   },
 ]
 
@@ -78,18 +78,48 @@ type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
 export default function ContactSection() {
   const [form, setForm] = useState<FormState>({ name: '', email: '', subject: '', message: '' })
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
+  const [errorMessage, setErrorMessage] = useState<string>('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    // Clear error message when user starts typing
+    if (submitState === 'error') {
+      setSubmitState('idle')
+      setErrorMessage('')
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitState('submitting')
-    // Simulate a short delay (replace with a real form submission action)
-    await new Promise((r) => setTimeout(r, 1200))
-    setSubmitState('success')
-    setForm({ name: '', email: '', subject: '', message: '' })
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message')
+      }
+
+      setSubmitState('success')
+      setForm({ name: '', email: '', subject: '', message: '' })
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitState('error')
+      setErrorMessage(
+        error instanceof Error 
+          ? error.message 
+          : 'Something went wrong. Please try again later.'
+      )
+    }
   }
 
   const inputClass =
@@ -186,6 +216,12 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+                  {submitState === 'error' && (
+                    <div className="rounded-md bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
+                      {errorMessage || 'Failed to send message. Please try again.'}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
                       <label htmlFor="name" className="text-xs font-medium text-foreground">
