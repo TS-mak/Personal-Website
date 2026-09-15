@@ -1,11 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Initialize Resend with your API key
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
   try {
+    // Initialize Resend here (lazy) so it doesn't run at build time
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'Server misconfigured: missing API key' },
+        { status: 500 }
+      );
+    }
+    const resend = new Resend(apiKey);
+
     const { name, email, subject, message } = await request.json();
 
     // Validate required fields
@@ -27,8 +35,8 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>', // Replace with your verified domain
-      to: ['makhubuts4@gmail.com'], // Your email address
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: ['makhubuts4@gmail.com'],
       replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
       html: `
@@ -51,22 +59,22 @@ export async function POST(request: NextRequest) {
             <div class="header">
               <h1>📬 New Portfolio Contact</h1>
             </div>
-            
+
             <div class="field">
               <div class="label">From</div>
               <div class="value"><strong>${name}</strong> (${email})</div>
             </div>
-            
+
             <div class="field">
               <div class="label">Subject</div>
               <div class="value">${subject}</div>
             </div>
-            
+
             <div class="field">
               <div class="label">Message</div>
               <div class="message-content">${message}</div>
             </div>
-            
+
             <div class="footer">
               <p>This message was sent from your portfolio contact form.</p>
               <p style="font-size: 12px; color: #9ca3af;">Reply directly to this email to respond to ${name}.</p>
