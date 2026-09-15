@@ -111,7 +111,7 @@ const entries: ExperienceEntry[] = [
   },
   {
     kind: 'leadership',
-    title: 'Co-founder & Interim Chairperson',
+    title: 'Co-founder & Chairperson',
     org: 'Stellenbosch Women in Information Technology (SWiiT)',
     period: 'June 2026 – Present',
     location: 'Stellenbosch, South Africa',

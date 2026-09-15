@@ -14,7 +14,7 @@ const highlights = [
   {
     icon: Globe,
     title: 'Distributed Systems',
-    description: 'Co-founder and Interim Chairperson of SWiiT, helping create opportunities for students to learn, collaborate, and grow within the technology community.',
+    description: 'Co-founder and Chairperson of SWiiT, helping create opportunities for students to learn, collaborate, and grow within the technology community.',
   },
   {
     icon: BookOpen,
@@ -63,7 +63,7 @@ export default function AboutSection() {
                 Great software is more than just making things work; it should be maintainable, efficient, and genuinely valuable to the people who use it.
               </p>
               <p>
-	      Beyond coding, I&apos;m passionate about collaboration, mentorship, and growing technology communities. As the Co-founder and Interim Chaiperson of the Stellenbosch Women in Information Technology Society (SWiiT), I help create spaces that encourage students to connect, learn from one another, and develop their skills in technology. I am also an active member of the Stellenbosch University Developers&apos; society (SU Dev Soc). To me, engineering is as much about people as it is about technology. The best engineers build great systems while helping others grow along the way.
+	      Beyond coding, I&apos;m passionate about collaboration, mentorship, and growing technology communities. As the Co-founder and Chaiperson of the Stellenbosch Women in Information Technology Society (SWiiT), I help create spaces that encourage students to connect, learn from one another, and develop their skills in technology. I am also an active member of the Stellenbosch University Developers&apos; society (SU Dev Soc). To me, engineering is as much about people as it is about technology. The best engineers build great systems while helping others grow along the way.
               </p>
             </div>
 
