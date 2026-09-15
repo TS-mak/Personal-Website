@@ -59,7 +59,7 @@ const projects: Project[] = [
     image: '/projects/algoviz.png',
     tags: ['React', 'TypeScript', 'Canvas API', 'CSS Animations'],
     github: 'https://github.com/TS-mak/AlgoViz',
-    demo: 'https://algoviz.example.com',
+    demo: 'https://algo-viz-ashy.vercel.app',
     highlights: [
       'Visualized 12 sorting and 6 graph traversal algorithms with smooth animations',
       'Built a custom animation scheduler with pause, resume, and step controls',
