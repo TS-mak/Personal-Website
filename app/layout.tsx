@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Thembisile — Software Engineer',
+  title: 'Thembisile - Software Engineer',
   description:
     'Personal portfolio of a senior Computer Science student and aspiring software engineer. Showcasing projects, skills, and experience.',
   generator: 'v0.app',
