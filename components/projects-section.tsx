@@ -22,10 +22,10 @@ const projects: Project[] = [
     description: 'A developer-focused platform for organising projects, tracking progress, and managing software development workflows.',
     longDescription:
       'DevTrack is a full-stack application designed to help developers organise their projects and monitor development progress in one place. The platform focuses on simplifying project management, improving workflow visibility, and providing a structured way to track development activities.',
-    image: '/projects/devlink.png',
+    image: '/projects/DevTrack.png',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    github: 'https://github.com/TS-mak/devlink',
-    demo: 'https://devlink.example.com',
+    github: 'https://github.com/TS-mak/DevTrack',
+    demo: 'https://dev-track-eight-teal.vercel.app/login',
     highlights: [
     'Designed to streamline developer project management and workflow tracking',
     'Focused on intuitive project organisation and progress visibility',
@@ -39,9 +39,9 @@ const projects: Project[] = [
     description: 'A software security and risk intelligence platform for identifying vulnerabilities, exposed secrets, insecure configurations, and dependency risks.',
     longDescription:
       'TraceGuard is a security-focused platform designed to analyse software repositories and transform security findings into actionable insights. It aims to contextualise vulnerabilities across application architecture, prioritise remediation based on risk, and track security posture over time, helping developers make informed decisions about the security of their software.',
-    image: '/projects/taskflow.png',
+    image: '/projects/TraceGuard.png',
     tags: ['Next.js', 'TypeScript', 'Software Security', 'Risk Analysis'],
-    github: 'https://github.com/yourusername/taskflow',
+    github: 'https://github.com/TS-mak/trace-guard',
     demo: 'https://taskflow.example.com',
     highlights: [
     'Designed to identify security risks across software repositories',
