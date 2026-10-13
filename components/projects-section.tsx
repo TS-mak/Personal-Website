@@ -42,7 +42,7 @@ const projects: Project[] = [
     image: '/projects/TraceGuard.png',
     tags: ['Next.js', 'TypeScript', 'Software Security', 'Risk Analysis'],
     github: 'https://github.com/TS-mak/trace-guard',
-    demo: 'https://taskflow.example.com',
+    demo: 'https://dev-track-gbt2.vercel.app/',
     highlights: [
     'Designed to identify security risks across software repositories',
     'Focused on detecting vulnerabilities, exposed secrets, and insecure configurations',
